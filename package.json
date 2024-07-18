@@ -1,0 +1,15 @@
+{
+  "name": "on36-ijs-banco-sos",
+  "version": "1.0.0",
+  "description": "Este projeto consiste em um Banco comunitário e será desenvolvido durante a Imersão JavaScript com AWS da Reprograma.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.5.3"
+  }
+}
