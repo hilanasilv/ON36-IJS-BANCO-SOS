@@ -24,3 +24,13 @@ Bancos comunitários são serviços financeiros solidários que visam gerar trab
 **Modelagem do Banco Comunitário**
 -
 <img src="./modelagem-db/modelagem-db.jpg">
+
+**Segunda Semana - POO com Typescript**
+-
+
+Para executar o projeto utilize os seguintes comandos:
+
+```bash
+npm run build
+npm start
+```
