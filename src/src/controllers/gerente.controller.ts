@@ -9,7 +9,7 @@ export class GerenteController {
 
   @Post('criar')
   criarGerente(@Body() gerente: Gerente): Gerente {
-    console.log('Recebendo pedido para criar gerente:', gerente);
+    console.log('Iniciando criação de novo gerente:', gerente);
     return this.gerenteService.criarGerente(gerente);
   }
 
@@ -17,18 +17,23 @@ export class GerenteController {
   buscarGerente(
     @Param('id', ParseIntPipe) id: number
   ): Gerente | { message: string } {
-    console.log('Recebendo pedido para buscar gerente com id:', id);
+    console.log('Buscando gerente com o id:', id);
     try {
       return this.gerenteService.buscarGerente(id);
     } catch (error) {
-      console.error('Erro ao buscar gerente:', error.message);
-      return { message: error.message };
+      if (error instanceof Error) {
+        console.error('Erro ao buscar gerente:', error.message);
+        return { message: error.message };
+      } else {
+        console.error(`Erro desconhecido ao buscar gerente com o ID ${id}:`, error);
+        return { message: 'Erro desconhecido ao buscar gerente' };
+      }
     }
   }
 
   @Get()
   buscarGerentes(): Gerente[] {
-    console.log('Recebendo pedido para buscar todos os gerentes');
+    console.log('Iniciando busca de todos os gerentes registrados');
     return this.gerenteService.buscarGerentes();
   }
 
@@ -37,7 +42,7 @@ export class GerenteController {
     @Param('id') id: number,
     @Body() gerenteAtualizado: Partial<Gerente>,
   ): Gerente | undefined {
-    console.log(`Recebendo pedido para atualizar gerente com id ${id}:`, gerenteAtualizado);
+    console.log(`Atualizando dados do gerente com id ${id}:`, gerenteAtualizado);
     return this.gerenteService.atualizarGerente(id, gerenteAtualizado);
   }
 
@@ -45,21 +50,26 @@ export class GerenteController {
   deletarGerente(
     @Param('id', ParseIntPipe) id: number
   ): { message: string } {
-    console.log('Recebendo pedido para deletar gerente com id:', id);
+    console.log(`Iniciando exclusão do gerente com id: ${id}`);
     return this.gerenteService.deletarGerente(id);
   }
 
-   @Post('associarcliente/:gerenteId')
+  @Post('associarcliente/:gerenteId')
   associarClienteAoGerente(
     @Param('gerenteId', ParseIntPipe) gerenteId: number,
     @Body() cliente: Cliente
   ): Gerente | { message: string } {
-    console.log('Associar cliente ao gerente:', gerenteId, cliente);
+    console.log(`Associando cliente ${JSON.stringify(cliente)} ao gerente com ID ${gerenteId}`);
     try {
       return this.gerenteService.adicionarClienteAoGerente(gerenteId, cliente);
     } catch (error) {
-      console.error('Erro ao associar cliente ao gerente:', error.message);
-      return { message: error.message };
+      if (error instanceof Error) {
+        console.error('Erro ao associar cliente ao gerente:', error.message);
+        return { message: error.message };
+      } else {
+        console.error('Erro desconhecido ao associar cliente ao gerente:', error);
+        return { message: 'Erro desconhecido ao associar cliente ao gerente' };
+      }
     }
   }
 }
