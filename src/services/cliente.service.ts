@@ -3,7 +3,7 @@ import {
     NotFoundException,
   } from '@nestjs/common';
   import { InterfacePessoa } from '../interfaces/pessoa.interface';
-  import { ContaService } from '../services/conta.service';
+  import { ContaService } from './conta.service';
   
   
   @Injectable()

@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ClienteService } from '../services/cliente.service';
 import { ClienteController } from '../controllers/cliente.controller';
-import { ContaModule } from '../modules/conta.module';
+import { ContaModule } from './conta.module';
 import { ContaService } from '../services/conta.service';
 
 @Module({
