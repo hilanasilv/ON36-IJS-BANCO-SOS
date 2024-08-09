@@ -10,9 +10,6 @@ Este projeto consiste em um Banco comunitário e será desenvolvido durante a Im
 **Sobre o projeto:**
 Bancos comunitários são serviços financeiros solidários que visam gerar trabalho e renda, promovendo o desenvolvimento de economias locais, especialmente em territórios de baixa renda, por meio do apoio à economia popular e solidária.
 
-
-
-
 **Serviços financeiros oferecidos pelo banco comunitário:**
 -  Crédito para financiamento de empreendimentos solidários.
 - Crédito para consumo pessoal e familiar, sem juros.
