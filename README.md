@@ -43,13 +43,8 @@ Para executar o projeto utilize os seguintes comandos:
 npm run build
 npm start
 ```
-
 **Terceira Semana - API com Nestjs**
 -
-
-
-
-
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
@@ -98,3 +93,11 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ### License
 
 Nest is [MIT licensed](LICENSE).
+
+**Quarta Semana - Design de código**
+-
+Objetivos de aprendizagem:
+- Explorar práticas recomendadas para criar um design de código claro e eficiente
+- Aplicar SOLID, DRY e KISS
+- Implementar padrões de código PD_Factory, PD_Adapter, PD_Observer
+- Identificar como os padrões de design influenciam a estrutura e organização de um sistema.
