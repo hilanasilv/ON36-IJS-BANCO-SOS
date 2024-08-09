@@ -1,11 +1,16 @@
 ## Banco SOS - Seu Banco Comunitário
 
+
 Este projeto consiste em um Banco comunitário e será desenvolvido durante a Imersão JavaScript com AWS da Reprograma.
+
 
 🚧 Em construção 🚧
 
-**Sobre o projeto:** 
+
+**Sobre o projeto:**
 Bancos comunitários são serviços financeiros solidários que visam gerar trabalho e renda, promovendo o desenvolvimento de economias locais, especialmente em territórios de baixa renda, por meio do apoio à economia popular e solidária.
+
+
 
 
 **Serviços financeiros oferecidos pelo banco comunitário:**
@@ -21,87 +26,22 @@ Bancos comunitários são serviços financeiros solidários que visam gerar trab
 - Prestação de contas diário e semanal para toda a comunidade
 - Desafio extra: Moeda social circulante local.
 
+
 **Modelagem do Banco Comunitário**
 -
 <img src="./modelagem-db/modelagem-db.jpg">
 
+
 **Segunda Semana - POO com Typescript**
 -
 
+
 Para executar o projeto utilize os seguintes comandos:
+
 
 ```bash
 npm run build
 npm start
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-**Quarta Semana - Design de código**
-
-
-
-
 
 
