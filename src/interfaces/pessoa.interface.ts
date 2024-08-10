@@ -1,0 +1,16 @@
+import { Conta } from '../models/conta.model';
+
+export interface InterfacePessoa {
+  id: number;
+  nome: string;
+  dataNascimento: string;
+  email: string;
+  telefone: string;
+  endereco: string;
+  cidade: string;
+  estado: string;
+  cpf: string;
+  rendaSalarial?: number;
+  statusAtivo?: boolean;
+  conta?: Conta[];
+}
