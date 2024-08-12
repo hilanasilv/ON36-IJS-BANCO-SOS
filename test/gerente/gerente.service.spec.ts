@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { GerenteService } from '../src/services/gerente.service';
-import { Gerente } from '../src/models/gerente.model';
-import { Cliente } from '../src/models/cliente.model';
+import { GerenteService } from '../../src/services/gerente.service';
+import { Gerente } from '../../src/models/gerente.model';
+import { Cliente } from '../../src/models/cliente.model';
 import { NotFoundException } from '@nestjs/common';
 
 describe('GerenteService', () => {

@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { ContaService } from '../src/services/conta.service';
-import { TipoConta } from '../src/enum/tipoDeConta';
-import { ContaCorrente } from '../src/models/contaCorrente.model';
-import { ContaPoupanca } from '../src/models/contaPoupanca.model';
+import { ContaService } from '../../src/services/conta.service';
+import { TipoConta } from '../../src/enum/tipoDeConta';
+import { ContaCorrente } from '../../src/models/contaCorrente.model';
+import { ContaPoupanca } from '../../src/models/contaPoupanca.model';
 
 describe('ContaService', () => {
   let contaService: ContaService;

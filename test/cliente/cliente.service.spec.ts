@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { ClienteService } from '../src/services/cliente.service';
-import { ContaService } from '../src/services/conta.service';
-import { InterfacePessoa } from '../src/interfaces/pessoa.interface';
+import { ClienteService } from '../../src/services/cliente.service';
+import { ContaService } from '../../src/services/conta.service';
+import { InterfacePessoa } from '../../src/interfaces/pessoa.interface';
 
 describe('ClienteService', () => {
   let service: ClienteService;
