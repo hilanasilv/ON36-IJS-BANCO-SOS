@@ -68,7 +68,7 @@ describe('GerenteService', () => {
     const cliente: Cliente = {
         id: 1,
         nome: 'Marina',
-        dataNascimento: '1990-01-01', // Corrigido para string
+        dataNascimento: '1990-01-01',
         email: 'marina@email.com',
         telefone: '123456789',
         endereco: 'Rua das Flores, 123',
