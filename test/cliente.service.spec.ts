@@ -24,7 +24,7 @@ describe('ClienteService', () => {
 
   it('deve adicionar um cliente', () => {
     const cliente: InterfacePessoa = {
-        id: 1, nome: 'João', conta: [],
+        id: 1, nome: 'Marina', conta: [],
         dataNascimento: '',
         email: '',
         telefone: '',
@@ -40,7 +40,7 @@ describe('ClienteService', () => {
 
   it('deve buscar um cliente pelo ID', () => {
     const cliente: InterfacePessoa = {
-        id: 1, nome: 'João', conta: [],
+        id: 1, nome: 'Marina', conta: [],
         dataNascimento: '',
         email: '',
         telefone: '',
@@ -58,6 +58,4 @@ describe('ClienteService', () => {
     const resultado = service.buscarCliente(999);
     expect(resultado).toBeUndefined();
   });
-
-  // Você pode adicionar mais testes para outras funcionalidades como atualizarCliente, deletarCliente, etc.
 });
