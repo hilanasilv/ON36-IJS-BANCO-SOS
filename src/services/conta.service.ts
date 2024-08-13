@@ -1,9 +1,8 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException, BadRequestException } from '@nestjs/common';
 import { Conta } from '../models/conta.model';
 import { TipoConta } from '../enum/tipoDeConta';
 import { ContaCorrenteFactory } from '../factories/contaCorrente.factory';
 import { ContaPoupancaFactory } from '../factories/contaPoupanca.factory';
-
 
 @Injectable()
 export class ContaService {
@@ -26,7 +25,7 @@ export class ContaService {
         conta = ContaPoupancaFactory.criarContaPoupanca(id, saldo, clienteId, rendimentoMensal || 0);
         break;
       default:
-        throw new Error(`Tipo de conta não suportado: ${tipo}`);
+        throw new BadRequestException(`Tipo de conta não suportado: ${tipo}`);
     }
     this.contas.push(conta);
     console.log('Conta criada:', conta);
@@ -34,7 +33,11 @@ export class ContaService {
   }
 
   obterConta(id: number): Conta | undefined {
-    return this.contas.find(conta => conta.id === id);
+    const conta = this.contas.find(conta => conta.id === id);
+    if (!conta) {
+      throw new NotFoundException(`Conta com ID ${id} não encontrada`);
+    }
+    return conta;
   }
 
   obterContas(): Conta[] {
@@ -47,14 +50,23 @@ export class ContaService {
       conta.tipo = tipo;
       return conta;
     }
-    return undefined;
+    throw new NotFoundException(`Conta com ID ${id} não encontrada`);
   }
 
   removerConta(id: number): void {
-    this.contas = this.contas.filter(conta => conta.id !== id);
+    const contaIndex = this.contas.findIndex(conta => conta.id === id);
+    if (contaIndex === -1) {
+      throw new NotFoundException(`Conta com ID ${id} não encontrada`);
+    }
+    this.contas.splice(contaIndex, 1);
   }
 
   removerContasPorCliente(idCliente: number): void {
+    const contasAntes = this.contas.length;
     this.contas = this.contas.filter(conta => conta.clienteId !== idCliente);
+    const contasRemovidas = contasAntes - this.contas.length;
+    if (contasRemovidas === 0) {
+      throw new NotFoundException(`Nenhuma conta encontrada para o cliente com ID ${idCliente}`);
+    }
   }
 }
