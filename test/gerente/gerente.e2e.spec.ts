@@ -70,7 +70,6 @@ describe('GerenteController (e2e)', () => {
     });  
 
     it('deve associar um cliente a um gerente', async () => {
-        // Primeiro, cria um novo gerente
         const gerente: Gerente = {
             id: 2,
             nome: 'Gerente 2',
@@ -83,8 +82,7 @@ describe('GerenteController (e2e)', () => {
             .expect(201);
 
         const novoGerenteId = responseGerente.body.id;
-
-        // Cria um cliente para associar ao gerente
+        
         const cliente: Cliente = {
             id: 1,
             nome: 'Cliente 1',

@@ -31,7 +31,6 @@ describe('ContaController (e2e)', () => {
       .send(conta)
       .expect(201);
 
-    // Ajusta a expectativa com base no que a API está retornando
     expect(response.body).toMatchObject({
       id: expect.any(Number),
       tipo: conta.tipo,
@@ -51,7 +50,7 @@ describe('ContaController (e2e)', () => {
     expect(response.body).toMatchObject({
       id: contaId,
       tipo: TipoConta.ContaCorrente,
-      saldo: 1000, // Ajuste com base no valor inicial definido
+      saldo: 1000,
       clienteId: 1,
       chequeEspecial: 500,
     });
@@ -77,10 +76,9 @@ describe('ContaController (e2e)', () => {
 
     expect(response.body.message).toBe('Conta removida com sucesso.');
 
-    // Verifica se a conta foi realmente removida
     await request(app.getHttpServer())
       .get(`/conta/${contaId}`)
-      .expect(404); // Ajuste conforme o código de erro retornado quando a conta não é encontrada
+      .expect(404); 
   });
 
   afterAll(async () => {

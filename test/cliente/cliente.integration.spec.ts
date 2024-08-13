@@ -87,7 +87,7 @@ describe('ClienteService', () => {
         cpf: ''
     };
     clienteService.adicionarCliente(cliente);
-    const conta: Conta = new Conta(1, TipoConta.ContaCorrente, 100, 1);  // Use os valores do enum TipoConta
+    const conta: Conta = new Conta(1, TipoConta.ContaCorrente, 100, 1); 
     jest.spyOn(contaService, 'obterConta').mockReturnValue(conta);
     
     expect(clienteService.associarConta(1, 1)).toBe(true);
