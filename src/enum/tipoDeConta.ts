@@ -1,4 +1,4 @@
 export enum TipoConta {
     ContaCorrente = "Conta Corrente",
-    ContaPoupanca = "Conta Poupança"
+    ContaPoupanca = "Conta Poupança",
  }
