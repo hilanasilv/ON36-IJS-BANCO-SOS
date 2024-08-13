@@ -13,22 +13,27 @@ export class ClienteController {
 
   @Post('associarconta')
   associarConta(@Body() body: { clienteId: number, contaId: number }) {
-    return this.clienteService.associarConta(body.clienteId, body.contaId);
+    const result = this.clienteService.associarConta(body.clienteId, body.contaId);
+    if (!result) {
+      throw new NotFoundException(`Cliente ou conta não encontrado.`);
+    }
+    return { message: 'Conta associada com sucesso.' };
   }
 
   @Get(':id')
-  async buscarCliente(@Param('id') id: number) {
-    console.log(`Buscar cliente ID: ${id}`);  
+  async buscarCliente(@Param('id', ParseIntPipe) id: number) {
+    console.log(`Buscando cliente com ID: ${id}`);  
     const cliente = this.clienteService.buscarCliente(id);
     if (!cliente) {
+      console.log(`Cliente com ID ${id} não encontrado.`);
       throw new NotFoundException(`Cliente com ID ${id} não encontrado.`);
     }
     return cliente;
-  }
+  }  
 
   @Get()
   async buscarClientes() {
-    console.log(`Todos os clientes.`);  
+    console.log(`Buscando todos os clientes.`);  
     return this.clienteService.buscarClientes();
   }
 
@@ -37,14 +42,17 @@ export class ClienteController {
     @Param('id', ParseIntPipe) id: number,
     @Body() atualizarCliente: Partial<Cliente>
   ) {
-    return this.clienteService.atualizarCliente(id, atualizarCliente);
+    const cliente = this.clienteService.atualizarCliente(id, atualizarCliente);
+    if (!cliente) {
+      throw new NotFoundException(`Cliente com ID ${id} não encontrado para atualização.`);
+    }
+    return cliente;
   }
 
   @Delete('deletar/:id')
   deletarCliente(@Param('id', ParseIntPipe) id: number): { message: string } {
     console.log('Recebendo pedido para deletar cliente com id:', id);
     this.clienteService.deletarCliente(id);
-    return { message: `Cliente removido com sucesso.` };
+    return { message: `Cliente com ID ${id} removido com sucesso.` };
   }
-  
 }
