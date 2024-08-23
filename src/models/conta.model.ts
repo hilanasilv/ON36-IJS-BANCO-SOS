@@ -6,5 +6,7 @@ export class Conta {
     public tipo: TipoConta,
     public saldo: number,
     public clienteId: number,
+    public chequeEspecial?: number,  
+    public rendimentoMensal?: number  
   ) {}
 }
