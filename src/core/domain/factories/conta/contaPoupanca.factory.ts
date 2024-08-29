@@ -1,4 +1,4 @@
-import { ContaPoupanca } from '../models/contaPoupanca.model';
+import { ContaPoupanca } from '../../models/conta/contaPoupanca.model';
 
 export class ContaPoupancaFactory {
   static criarContaPoupanca(

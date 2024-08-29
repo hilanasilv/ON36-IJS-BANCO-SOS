@@ -1,4 +1,4 @@
-import { Conta } from './conta.model';
+import { Conta } from '../models/conta/conta.model';
 import { InterfacePessoa } from '../interfaces/pessoa.interface';
 
 export class Cliente implements InterfacePessoa {

@@ -1,4 +1,4 @@
-import { TipoConta } from "../enum/tipoDeConta";
+import { TipoConta } from "../../enum/tipoDeConta";
 
 export class Conta {
   constructor(

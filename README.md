@@ -120,3 +120,9 @@ Nest is [MIT licensed](LICENSE).
 - Escrever testes unitários utilizando frameworks de teste em TypeScript.
 - Criar testes de integração para validar a interação entre diferentes partes do sistema.
 - Desenvolver testes end-to-end para garantir que o fluxo completo do usuário funcione conforme esperado.
+
+**Sexta Semana - Arquitetura Hexagonal**
+-
+- Compreender Ports and Adapters.
+- Refatorar o código seguindo os princípios da Arquitetura Hexagonal.
+- Integrar chamadas a uma API externa.

@@ -1,4 +1,4 @@
-import { ContaCorrente } from '../models/contaCorrente.model';
+import { ContaCorrente } from '../../models/conta/contaCorrente.model';
 
 export class ContaCorrenteFactory {
     static criarContaCorrente(
