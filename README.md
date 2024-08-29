@@ -126,3 +126,7 @@ Nest is [MIT licensed](LICENSE).
 - Compreender Ports and Adapters.
 - Refatorar o código seguindo os princípios da Arquitetura Hexagonal.
 - Integrar chamadas a uma API externa.
+
+**Oitava Semana - Banco de dados**
+-
+- Criação do banco de dados com TypeORM e PostgreSQL.
